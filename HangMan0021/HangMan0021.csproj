@@ -43,8 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesAndWords.cs" />
+    <Compile Include="Clues.cs" />
+    <Compile Include="GameTextDescription.cs" />
+    <Compile Include="Guess.cs" />
+    <Compile Include="PlayerWillPlay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="SecretWord.cs" />
+    <Compile Include="WelcomeBanner.cs" />
+    <Compile Include="WillUserPlay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
