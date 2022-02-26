@@ -30,12 +30,12 @@ namespace HangMan0021
             return category;
         }
 
-        public static string SecretWordClue()
+        public static string ReturnSecretWord()
         {
             return secretWord;
         }
 
-        public static string GetUnderscoreSecretWord()
+        public static string SecretWordClue()
         {
             string stringUnderScoreSecretWord = String.Empty;
             if (Guess.GuessesLeft == 6)

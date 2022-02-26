@@ -43,17 +43,16 @@ namespace HangMan0021
 
             Console.WriteLine(stringBuilder + "\n");
 
-            Console.WriteLine($"\tHere are your clues: \n");
+            Console.WriteLine($"\t{PlayerWillPlay.FirstName}, here are some clues: \n");
             Console.WriteLine($"\tCategory: {Clues.CategoryClue()}");
             Console.WriteLine($"\tTotal letters: {Clues.SecretWordLengthClue()}");
             Console.WriteLine($"\tGuesses left: {Guess.GuessesLeft}");
-            Console.WriteLine($"\tClue: {Clues.GetUnderscoreSecretWord()}\n");
-            
+            Console.WriteLine($"\tClue: {Clues.SecretWordClue()}\n");
 
             Console.Write("\tGuess the next letter.... ");
             Guess.GuessedLetter = Convert.ToChar(Console.ReadLine());
             
-            Console.WriteLine($"\tClue: {Clues.GetUnderscoreSecretWord()}\n");
+            Console.WriteLine($"\tClue: {Clues.SecretWordClue()}\n");
 
 
 
