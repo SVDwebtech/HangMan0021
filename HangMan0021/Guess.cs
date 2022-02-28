@@ -13,17 +13,27 @@ namespace HangMan0021
 
         public static string EvaluateGuess()
         {
-            GuessesLeft--;
-            var varUnderScoreClueCharArray = Clues.GetUnderscoreSecretWord().ToCharArray();
-            for(var i = 0; i < Clues.SecretWordClue().Length; i++)
+            var varUnderScoreClueCharArray = Clues.secretWordClue.ToCharArray();
+            string secretWordWithSpaces = "";
+            foreach(char letter in Clues.secretWord)
             {
-                if (Clues.SecretWordClue()[i] == GuessedLetter)
+                secretWordWithSpaces += letter + " ";
+            }
+            var printString = "";
+            for (var i = 0; i < varUnderScoreClueCharArray.Length; i++)
+            {
+                if (Convert.ToChar(secretWordWithSpaces[i]) == GuessedLetter)
                 {
                     varUnderScoreClueCharArray[i] = GuessedLetter;
+                   
                 }
             }
-
-            return varUnderScoreClueCharArray.ToString();
+            foreach (char c in varUnderScoreClueCharArray)
+            {
+                printString += c;
+            }
+            Clues.secretWordClue = printString;
+            return printString;
         }
     }
 }

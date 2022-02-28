@@ -8,7 +8,8 @@ namespace HangMan0021
 {
     internal class Clues
     {
-        private static string secretWord = SecretWord.GetSecretWord();
+        public static string secretWord = SecretWord.GetSecretWord();
+        public static string secretWordClue = SecretWordClue();
         
         public static string CategoryClue()
         {
