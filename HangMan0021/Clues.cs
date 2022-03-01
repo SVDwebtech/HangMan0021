@@ -27,7 +27,6 @@ namespace HangMan0021
             {
                 category = "sports";
             }
-
             return category;
         }
 
@@ -38,11 +37,12 @@ namespace HangMan0021
 
         public static string SecretWordClue()
         {
+            Guess.ChangeIsFirstGuess();
             string stringUnderScoreSecretWord = String.Empty;
-            if (Guess.GuessesLeft == 6)
+            if (!Guess.isFirstGuess)
             {
+                Guess.isVisible = false;
                 var secretWordCharArray = secretWord.ToCharArray();
-                //var underScoreSecretWordClueCharArray = new char[secretWordCharArray.Length];
                 var totalNumberOfUnderScoresToInsert = secretWord.Length - (secretWord.Length / 4);
                 Random randNum = new Random();
                 int randomIndex;
