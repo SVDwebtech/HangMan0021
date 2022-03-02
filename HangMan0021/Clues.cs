@@ -19,9 +19,9 @@ namespace HangMan0021
             {
                 category = "fruits";
             }
-            else if (CategoriesAndWords.Mamals.IndexOf(secretWord) >= 0)
+            else if (CategoriesAndWords.Mammals.IndexOf(secretWord) >= 0)
             {
-                category = "mamals";
+                category = "mammals";
             }
             else if (CategoriesAndWords.Sports.IndexOf(secretWord) >= 0)
             {

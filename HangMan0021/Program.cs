@@ -13,7 +13,13 @@ namespace HangMan0021
             WelcomeBanner.DisplayWelcomeBanner();
             GameTextDescription.DisplayGameTextDescription();
             PlayerWillPlay.GetPlayerDetails();
-            PlayLoop.DisplayPlayLoop();
+            while (PlayAgain.PlayerWillPlayAgain)
+            {
+                PlayLoop.DisplayPlayLoop();
+                PlayAgain.WillPlayAgain();
+                
+            }
+            
 
 
         }

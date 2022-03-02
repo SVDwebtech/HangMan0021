@@ -13,16 +13,17 @@ namespace HangMan0021
         public static bool isFirstGuess = false;
         public static bool isVisible = true;
         public static int count = 0;
+        public static string secretWordWithSpaces = "";
+        public static string printString = "";
 
         public static string EvaluateGuess()
         {
             var varUnderScoreClueCharArray = Clues.secretWordClue.ToCharArray();
-            string secretWordWithSpaces = "";
-            foreach(char letter in Clues.secretWord)
+            foreach (char letter in Clues.secretWord)
             {
                 secretWordWithSpaces += letter + " ";
             }
-            var printString = "";
+            printString = "";
             for (var i = 0; i < varUnderScoreClueCharArray.Length; i++)
             {
                 if (Convert.ToChar(secretWordWithSpaces[i]) == GuessedLetter)
@@ -48,6 +49,16 @@ namespace HangMan0021
             }
             count++;
             Clues.secretWordClue = printString;
+            if(printString.IndexOf('_') == -1 && GuessesLeft > 0)
+            {
+                Console.WriteLine("\tWell done! YOU WON!");
+                PlayLoop.GameOver = true;
+            }
+            else if (GuessesLeft < 1)
+            {
+                Console.WriteLine("\tSorry, no guesses left! YOU LOST!");
+                PlayLoop.GameOver = true;
+            }
             return printString;
         }
 

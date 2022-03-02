@@ -47,6 +47,7 @@
     <Compile Include="Clues.cs" />
     <Compile Include="GameTextDescription.cs" />
     <Compile Include="Guess.cs" />
+    <Compile Include="PlayAgain.cs" />
     <Compile Include="PlayBanner.cs" />
     <Compile Include="PlayerWillPlay.cs" />
     <Compile Include="PlayLoop.cs" />

@@ -19,10 +19,10 @@ namespace HangMan0021
                 var randomIndex = randomNum.Next(0, CategoriesAndWords.Fruits.Count);
                 secretWord = CategoriesAndWords.Fruits[randomIndex];
             }
-            else if (category == "mamals")
+            else if (category == "mammals")
             {
-                var randomIndex = randomNum.Next(0, CategoriesAndWords.Mamals.Count);
-                secretWord = CategoriesAndWords.Mamals[randomIndex];
+                var randomIndex = randomNum.Next(0, CategoriesAndWords.Mammals.Count);
+                secretWord = CategoriesAndWords.Mammals[randomIndex];
             }
             else if (category == "sports")
             {
