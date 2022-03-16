@@ -21,6 +21,18 @@ namespace HangMan0021
                 while(Guess.count <= 0)
                 {
                     Console.WriteLine($"\tGuesses left: {Guess.GuessesLeft}");
+                    Console.Write("\tLetters Correct: ");
+                    foreach(var letter in Guess.guessesCorrect)
+                    {
+                        Console.Write(letter + ", ");
+                    }
+                    Console.WriteLine();
+                    Console.Write("\tLetters Wrong: ");
+                    foreach (var letter in Guess.guessesWrong)
+                    {
+                        Console.Write(letter + ", ");
+                    }
+                    Console.WriteLine();
                     Guess.count++;
                 }
                 Console.WriteLine($"\tClue: {Clues.secretWordClue = Clues.SecretWordClue()}\n");

@@ -15,7 +15,9 @@ namespace HangMan0021
         public static int count = 0;
         public static string secretWordWithSpaces = "";
         public static string printString = "";
-
+        public readonly static List<char> guessesCorrect = new List<char>();
+        public readonly static List<char> guessesWrong = new List<char>();
+        
         public static string EvaluateGuess()
         {
             var varUnderScoreClueCharArray = Clues.secretWordClue.ToCharArray();
@@ -30,8 +32,13 @@ namespace HangMan0021
                 {
 
                     varUnderScoreClueCharArray[i] = GuessedLetter;
+                    guessesCorrect.Add(GuessedLetter);
 
                 }
+            }
+            if(secretWordWithSpaces.IndexOf(GuessedLetter) == -1)
+            {
+                guessesWrong.Add(GuessedLetter);
             }
             foreach (char c in varUnderScoreClueCharArray)
             {
@@ -44,6 +51,18 @@ namespace HangMan0021
             while (count >= 1)
             {
                 Console.WriteLine($"\tGuesses left: {Guess.GuessesLeft}");
+                Console.Write("\tLetters Correct: ");
+                foreach (var letter in Guess.guessesCorrect)
+                {
+                    Console.Write(letter + ", ");
+                }
+                Console.WriteLine();
+                Console.Write("\tLetters Wrong: ");
+                foreach (var letter in Guess.guessesWrong)
+                {
+                    Console.Write(letter + ", ");
+                }
+                Console.WriteLine();
                 count++;
                 break;
             }
